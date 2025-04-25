@@ -6,9 +6,14 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-    <HeroSection />
-    {/* <Hero /> */}
-    <About />
+    {/* <HeroSection />
+    <About /> */}
+    <div className="overflow-x-hidden">
+      <HeroSection />
+      <div className=" p-10">
+        <About />
+      </div>
+    </div>
     </>
   );
 }
