@@ -117,20 +117,48 @@ export default function HeroSection() {
 
   return (
     <div
-      ref={containerRef}
-      className="h-screen w-full sticky top-0 bg-white flex items-center justify-center overflow-hidden z-50"
-    >
-      <div
-        ref={imageRef}
-        className="bg-black"
-        style={{
-          transform: `scale(${scale})`,
-          transition: "transform 0.1s ease-out",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover", 
-        }}
-      />
+    ref={containerRef}
+    className="h-screen w-full sticky top-0 bg-white flex flex-col items-center justify-center overflow-hidden z-50"
+  >
+    {/* Title and Description - Positioned at the top */}
+    <div className="absolute top-16 w-full max-w-4xl px-6 z-10 text-center">
+      <h1 className="text-6xl md:text-8xl font-bold tracking-tight">BARUA ZETU</h1>
+      <p className="text-xl md:text-2xl mt-4 italic">
+      A Memory Project
+      </p>
     </div>
+    
+    <div
+      ref={imageRef}
+      className=""
+      style={{
+        transform: `scale(${scale})`,
+        transition: "transform 0.1s ease-out",
+        width: "100%",
+        height: "100%",
+        objectFit: "cover", 
+        position: "relative"
+      }}
+    >
+      <img src="/homepage/pr0.jpg" alt="Hero image" className="w-full h-full object-cover" />
+    </div>
+    
+    {/* Bottom div - will be visible when scaled to full size */}
+    <div className="absolute bottom-12 w-full max-w-4xl px-6 z-10">
+      <div className="">
+        <p className="font-work-sans text-lg">
+          This section can contain call-to-action buttons, additional info, or whatever else you'd like to place at the bottom of your hero.
+        </p>
+        <div className="mt-4 flex space-x-4">
+          <button className="bg-white text-black px-6 py-2 rounded-full font-medium hover:bg-gray-200 transition-colors">
+            Learn More
+          </button>
+          <button className="border border-white text-white px-6 py-2 rounded-full font-medium hover:bg-white/20 transition-colors">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   );
 }
