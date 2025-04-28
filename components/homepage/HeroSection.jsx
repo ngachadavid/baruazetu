@@ -190,7 +190,7 @@ export default function HeroSection() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-full sticky top-0 bg-white flex flex-col items-center justify-center overflow-hidden"
+      className="h-screen w-full sticky top-0 flex flex-col items-center justify-center overflow-hidden"
     >
       <div className="absolute top-4 w-full max-w-4xl px-6 text-center">
         <motion.div 
