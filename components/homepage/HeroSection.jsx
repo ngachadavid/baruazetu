@@ -226,7 +226,7 @@ export default function HeroSection() {
 
       <div
         ref={imageRef}
-        className="z-50 bg-red-500"
+        className="z-50"
         style={{
           transform: `scale(${scale})`,
           transition: "transform 0.1s ease-out",
