@@ -15,7 +15,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <HeroSection />
       <div className="">
-        <MemoryShowcase />
+        <About />
         {/* <IntroductionSection /> */}
       </div>
       {/* <CategoriesSection /> */}
