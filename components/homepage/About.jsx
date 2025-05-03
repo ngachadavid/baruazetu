@@ -1,10 +1,36 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
+import AboutCard from './Aboutcard';
 
 export default function About() {
   const lineRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  const aboutData = [
+    {
+      bulletTitle: "Our Mission",
+      mainTitle: "Preserving Memories",
+      description: "We collect and archive personal narratives to ensure future generations understand this pivotal moment in Kenya's history.",
+      mainImage: "/homepage/protestor.webp",
+      floatingImage: "/homepage/protestor.webp"
+    },
+    {
+      bulletTitle: "Our Community",
+      mainTitle: "Voices United",
+      description: "People from all backgrounds contribute their unique perspectives, creating a multifaceted record of lived experiences.",
+      mainImage: "/homepage/protestor.webp",
+      floatingImage: "/homepage/protestor.webp",
+      isReversed: true
+    },
+    // {
+    //   bulletTitle: "Our Impact",
+    //   mainTitle: "Creating Legacy",
+    //   description: "These stories have profound effects on how we understand ourselves and our shared history as Kenyans.",
+    //   mainImage: "/homepage/protestor.webp",
+    //   floatingImage: "/homepage/protestor.webp"
+    // }
+  ]
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -15,7 +41,7 @@ export default function About() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 } // Trigger when 20% of the element is visible
+      { threshold: 0.2 } 
     );
 
     if (lineRef.current) {
@@ -73,6 +99,13 @@ export default function About() {
           </div>
         </div>
       </div>
+      <div>
+      {aboutData.map((data, index) => (
+        <AboutCard key={index} {...data} />
+      ))}
+    </div>
+      
+
     </section>
   );
 }
