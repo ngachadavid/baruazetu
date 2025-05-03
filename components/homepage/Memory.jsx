@@ -1,4 +1,4 @@
-const Memory = () => {
+const Memory = ({ index = 0 }) => {
     return (
       <div className="w-full flex justify-end px-6 py-16 mr-48">
         {/* Container with top border */}
@@ -7,7 +7,7 @@ const Memory = () => {
           <div className="flex items-center space-x-3 justify-start mb-8">
             <div className="w-2 h-2 rounded-full bg-black"></div>
             <h2 className="text-3xl md:text-5xl font-bold text-center">
-              Our Collective Memory
+              Our Collective Memory {index > 0 ? index : ""}
             </h2>
           </div>
   
@@ -37,4 +37,3 @@ const Memory = () => {
   };
   
   export default Memory;
-  
