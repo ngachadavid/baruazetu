@@ -90,7 +90,8 @@ export default function HeroSection() {
   const adjustScale = (delta) => {
     if (!isLocked || !imageRef.current) return;
 
-    const scaleStep = 0.01;
+    // Smaller step size for smoother transitions
+    const scaleStep = 0.005;
     
     // Determine direction and adjust scale accordingly
     let newScale;
@@ -110,7 +111,7 @@ export default function HeroSection() {
       document.body.style.overflow = "auto";
     }
 
-    // Always keep image scaling to current scale value
+    // Apply scale with a slight transition for smoother look
     imageRef.current.style.transform = `scale(${newScale})`;
   };
 
@@ -141,7 +142,7 @@ export default function HeroSection() {
       adjustScale(e.deltaY);
     };
 
-    // Touch event handlers
+    // Improved touch event handlers
     const handleTouchStart = (e) => {
       if (!isLocked) return;
       touchStartY.current = e.touches[0].clientY;
@@ -150,17 +151,22 @@ export default function HeroSection() {
     const handleTouchMove = (e) => {
       if (!isLocked || !containerRef.current || !imageRef.current) return;
       
+      // Prevent default to avoid page scrolling
       e.preventDefault();
       
       const touchY = e.touches[0].clientY;
       const deltaY = touchStartY.current - touchY;
       
-      // Update touch start position for continuous movement
-      touchStartY.current = touchY;
+      // Adjust sensitivity for touch - make it more responsive
+      const touchSensitivity = 2.5;
       
-      // Adjust scale based on touch movement
-      // Multiplying by 5 to make touch movement more responsive
-      adjustScale(deltaY * 5);
+      // Apply multiple small steps for smoother scaling
+      for (let i = 0; i < Math.abs(deltaY) / 10; i++) {
+        adjustScale(Math.sign(deltaY) * touchSensitivity);
+      }
+      
+      // Update touch start position for next move event
+      touchStartY.current = touchY;
     };
 
     // Handle gradual contraction when returning to the hero section
@@ -204,7 +210,7 @@ export default function HeroSection() {
     
     // Add touch event listeners to the container
     if (containerRef.current) {
-      containerRef.current.addEventListener('touchstart', handleTouchStart, { passive: false });
+      containerRef.current.addEventListener('touchstart', handleTouchStart, { passive: true });
       containerRef.current.addEventListener('touchmove', handleTouchMove, { passive: false });
     }
 
@@ -270,7 +276,7 @@ export default function HeroSection() {
         className="z-50"
         style={{
           transform: `scale(${scale})`,
-          transition: "transform 0.1s ease-out",
+          transition: "transform 0.15s ease-out",
           width: "100%",
           height: "100%",
           objectFit: "cover",
