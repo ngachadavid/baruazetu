@@ -8,11 +8,14 @@ export default function HeroSection() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const [isLocked, setIsLocked] = useState(true);
-  const [scale, setScale] = useState(0.3);
+  // Increased initial scale from 0.3 to 0.5 for better visibility on mobile
+  const [scale, setScale] = useState(0.5);
   const lenisRef = useRef(null);
   const maxScaleRef = useRef(1);
   const previousScrollY = useRef(0);
   const contractionInProgress = useRef(false);
+  // Add state to track if device is mobile
+  const [isMobile, setIsMobile] = useState(false);
 
   // Text animation variants
   const titleVariants = {
@@ -86,10 +89,21 @@ export default function HeroSection() {
   };
 
   useEffect(() => {
+    // Check if device is mobile
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Run on initial load
+    checkIfMobile();
+    
+    // Listen for resize events
+    window.addEventListener('resize', checkIfMobile);
+
     lenisRef.current = new Lenis({
       lerp: 0.1,
       smoothWheel: true,
-      smoothTouch: false,
+      smoothTouch: true, // Enable smooth touch scrolling
     });
 
     function raf(time) {
@@ -103,6 +117,48 @@ export default function HeroSection() {
     if (containerRef.current && imageRef.current) {
       maxScaleRef.current = containerRef.current.offsetWidth / imageRef.current.offsetWidth;
     }
+
+    // Track touch start positions
+    let touchStartY = 0;
+    
+    const handleTouchStart = (e) => {
+      if (!isLocked) return;
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!containerRef.current || !imageRef.current) return;
+      if (!isLocked) return;
+
+      e.preventDefault();
+      
+      const touchY = e.touches[0].clientY;
+      const delta = touchStartY - touchY;
+      touchStartY = touchY;
+      
+      const scaleStep = 0.01;
+      
+      // Determine direction and adjust scale accordingly
+      let newScale;
+      if (delta > 0) {
+        // Swiping up - expand
+        newScale = Math.min(maxScaleRef.current, scale + scaleStep);
+      } else {
+        // Swiping down - contract
+        newScale = Math.max(isMobile ? 0.5 : 0.3, scale - scaleStep);
+      }
+
+      setScale(newScale);
+
+      // Unlock scrolling only when fully expanded
+      if (newScale >= maxScaleRef.current) {
+        setIsLocked(false);
+        document.body.style.overflow = "auto";
+      }
+
+      // Update image scale
+      imageRef.current.style.transform = `scale(${newScale})`;
+    };
 
     const handleScroll = (e) => {
       if (!containerRef.current || !imageRef.current) return;
@@ -120,7 +176,7 @@ export default function HeroSection() {
         newScale = Math.min(maxScaleRef.current, scale + scaleStep);
       } else {
         // Scrolling up - contract
-        newScale = Math.max(0.3, scale - scaleStep);
+        newScale = Math.max(isMobile ? 0.5 : 0.3, scale - scaleStep);
       }
 
       setScale(newScale);
@@ -150,7 +206,8 @@ export default function HeroSection() {
           // Start gradual contraction animation
           const startContractionAnimation = () => {
             const currentScale = parseFloat(imageRef.current.style.transform.replace('scale(', '').replace(')', '') || maxScaleRef.current);
-            const targetScale = 0.3;
+            // Use mobile-specific target scale
+            const targetScale = isMobile ? 0.5 : 0.3;
             const step = 0.02;
 
             if (currentScale > targetScale) {
@@ -172,6 +229,12 @@ export default function HeroSection() {
 
     window.addEventListener('wheel', handleScroll, { passive: false });
     window.addEventListener('scroll', handleScrollReturn);
+    
+    // Add touch events for mobile
+    if (containerRef.current) {
+      containerRef.current.addEventListener('touchstart', handleTouchStart, { passive: false });
+      containerRef.current.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
 
     // Manage scroll locking initially
     if (isLocked) {
@@ -182,10 +245,15 @@ export default function HeroSection() {
     return () => {
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('scroll', handleScrollReturn);
+      window.removeEventListener('resize', checkIfMobile);
+      if (containerRef.current) {
+        containerRef.current.removeEventListener('touchstart', handleTouchStart);
+        containerRef.current.removeEventListener('touchmove', handleTouchMove);
+      }
       document.body.style.overflow = "auto";
-      lenisRef.current.destroy();
+      lenisRef.current?.destroy();
     };
-  }, [isLocked, scale]);
+  }, [isLocked, scale, isMobile]);
 
   return (
     <div
@@ -215,7 +283,7 @@ export default function HeroSection() {
         </motion.div>
         
         <motion.p 
-          className="text-xl md:text-2xl mt-2 md:mt-4 italic"
+          className="text-xl md:text-2xl mt-2 md:mt-0 italic"
           variants={subtitleVariants}
           initial="hidden"
           animate="visible"
@@ -226,7 +294,7 @@ export default function HeroSection() {
 
       <div
         ref={imageRef}
-        className="z-50 bg-red-500"
+        className="z-50"
         style={{
           transform: `scale(${scale})`,
           transition: "transform 0.1s ease-out",
@@ -236,13 +304,17 @@ export default function HeroSection() {
           position: "relative"
         }}
       >
-        <img src="/homepage/pr0.jpg" alt="Hero image" className="w-full h-full object-cover" />
+        <img 
+          src="/homepage/pr0.jpg" 
+          alt="Hero image" 
+          className="w-full h-full object-cover" 
+        />
       </div>
 
       {/* Bottom div - will be visible when scaled to full size, with animation */}
-      <div className="absolute bottom-4 md:bottom-10 w-full max-w-4xl px-4 md:px-6 z-10 flex flex-col items-center">
+      <div className="absolute bottom-2 md:bottom-10 w-full max-w-4xl px-4 md:px-6 z-10 flex flex-col items-center">
         <motion.p 
-          className="font-work-sans text-lg font-bold text-center"
+          className="font-work-sans text-base md:text-lg font-bold text-center"
           variants={descriptionVariants}
           initial="hidden"
           animate="visible"
