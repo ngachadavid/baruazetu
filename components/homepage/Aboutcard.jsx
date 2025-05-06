@@ -117,7 +117,7 @@ export default function AboutCard({
     >
       {/* Floating image between content and image column */}
       <motion.div 
-        className="hidden md:block absolute left-[60%] top-[78%] transform -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-xl z-50 rounded-xl overflow-hidden shadow-xl"
+        className=" absolute left-[60%] top-[30%] md:top-[78%] transform -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-xl z-50 rounded-xl overflow-hidden shadow-xl"
         variants={floatingImageVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
@@ -125,7 +125,7 @@ export default function AboutCard({
         <img
           src={floatingImage || "/homepage/protestor.webp"}
           alt="Floating visual accent"
-          className="w-[80%] h-56 object-cover"
+          className="w-full md:w-[80%] h-32 md:h-56 object-cover"
         />
       </motion.div>
 
@@ -148,7 +148,7 @@ export default function AboutCard({
         </div>
 
         {/* Two-column text layout */}
-        <div className="flex flex-col md:flex-row md:items-start md:space-x-6">
+        <div className="flex flex-col md:flex-row md:items-start md:space-x-6 mb-20">
           {/* Left small bullet title */}
           <motion.div 
             className="mb-4 md:mb-0 md:w-1/4"
