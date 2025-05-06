@@ -90,7 +90,7 @@ export default function About() {
             />
           </div>
           
-          <div className="aspect-[4/5] overflow-hidden md:mt-12">
+          <div className="hidden md:block aspect-[4/5] overflow-hidden md:mt-12">
             <img
               src="/homepage/protestor.webp"
               alt="Written letters and memories"

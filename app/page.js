@@ -1,5 +1,6 @@
 import About from "@/components/homepage/About";
 import CategoriesSection from "@/components/homepage/Categories";
+import FAQSection from "@/components/homepage/FAQ";
 // import Hero from "@/components/homepage/Hero";
 import HeroSection from "@/components/homepage/HeroSection";
 import MemoryShowcase from "@/components/homepage/History";
@@ -16,9 +17,8 @@ export default function Home() {
       <HeroSection />
       <div className="">
         <About />
-        {/* <IntroductionSection /> */}
       </div>
-      {/* <CategoriesSection /> */}
+      <FAQSection />
     </div>
     </>
   );
