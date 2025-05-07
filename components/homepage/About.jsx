@@ -41,7 +41,7 @@ export default function About() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.2 } 
+      { threshold: 0.2 }
     );
 
     if (lineRef.current) {
@@ -62,10 +62,10 @@ export default function About() {
         <h2 className="text-xl md:text-4xl font-bold text-start mb-2">
           • A Collective Memory
         </h2>
-        
+
         {/* Top line with animation */}
         <div ref={lineRef} className="w-full h-px bg-transparent relative mb-4 overflow-hidden">
-          <div 
+          <div
             className="absolute top-0 left-0 h-full bg-black"
             style={{
               width: isVisible ? '100%' : '0%',
@@ -73,13 +73,16 @@ export default function About() {
             }}
           />
         </div>
-        
+
         {/* Description */}
         <p className="text-sm md:text-base text-start mx-auto mb-16">
-          <span className="font-semibold">Barua Zetu</span> archives Kenyans' reflections, stories, and expressions about the June 2024 protests.
-          We believe that these experiences—whether of hope, grief, rage, or clarity—must be recorded in our own words.
+          <span className="font-semibold">Barua Zetu</span> archives the emotional, political, social, and personal perspectives that shaped the experiences. It
+          records how lives changed, how our political consciousness was stirred and how we currently
+          perceive our past, present and future. We acknowledge that these were not isolated incidents.
+          Still, people had different experiences, and we look into recording and learning from these
+          personal experiences and reflections.
         </p>
-        
+
         {/* Two images side by side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="overflow-hidden">
@@ -89,7 +92,7 @@ export default function About() {
               className="w-full h-96 object-cover rounded-lg"
             />
           </div>
-          
+
           <div className="hidden md:block aspect-[4/5] overflow-hidden md:mt-12">
             <img
               src="/homepage/protestor.webp"
@@ -100,11 +103,11 @@ export default function About() {
         </div>
       </div>
       <div>
-      {aboutData.map((data, index) => (
-        <AboutCard key={index} {...data} />
-      ))}
-    </div>
-      
+        {aboutData.map((data, index) => (
+          <AboutCard key={index} {...data} />
+        ))}
+      </div>
+
 
     </section>
   );
