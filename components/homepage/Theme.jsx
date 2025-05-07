@@ -46,16 +46,16 @@ export default function Theme() {
   return (
     <div 
       ref={sectionRef}
-      className="max-w-[1280px] max-2xl:px-4 mx-auto px-6 pt-0 pb-20 space-y-12"
+      className="max-w-[1280px] max-2xl:px-4 mx-auto pt-0 pb-10 md:pb-20 space-y-6 md:space-y-12"
     >
       {themes.map((item, index) => (
-        <div key={index} className="pb-12 relative">
+        <div key={index} className="pb-4 md:pb-12 relative">
           {/* Content wrapper */}
           <div className="flex flex-col md:flex-row">
-            <h2 className="md:w-1/3 font-bold text-lg">
+            <h2 className="md:w-1/3 font-bold text-base md:text-xl">
               {item.title}
             </h2>
-            <div className="md:w-2/3 mt-4 md:mt-0 text-black">
+            <div className="md:w-2/3 mt-1 md:mt-0 text-sm md:text-lg">
               {item.content}
             </div>
           </div>
