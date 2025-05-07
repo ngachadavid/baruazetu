@@ -6,6 +6,7 @@ import HeroSection from "@/components/homepage/HeroSection";
 import MemoryShowcase from "@/components/homepage/History";
 import IntroductionSection from "@/components/homepage/Intro";
 import Memory from "@/components/homepage/Memory";
+import Theme from "@/components/homepage/Theme";
 import Image from "next/image";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <div className="">
         <About />
       </div>
+      <Theme />
       <FAQSection />
     </div>
     </>

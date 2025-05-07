@@ -60,7 +60,7 @@ export default function FAQSection() {
             <h2 className="text-3xl md:text-5xl font-bold mb-10">Frequently Asked Questions</h2>
 
             {faqs.map((faq, index) => (
-                <div key={index} className="border-b border-gray-400">
+                <div key={index} className="border-b border-black">
                     <button
                         className="w-full text-left py-4 flex justify-between items-center"
                         onClick={() => toggleIndex(index)}
