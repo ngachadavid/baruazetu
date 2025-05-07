@@ -56,7 +56,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="w-full py-24">
+    <section className="max-w-[1280px] max-2xl:px-4 mx-auto px-6 py-20">
       <div className="max-w-3xl mx-auto px-6">
         {/* Heading */}
         <h2 className="text-xl md:text-4xl font-bold text-start mb-2">
@@ -102,11 +102,11 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         {aboutData.map((data, index) => (
           <AboutCard key={index} {...data} />
         ))}
-      </div>
+      </div> */}
 
 
     </section>
