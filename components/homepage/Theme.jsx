@@ -55,8 +55,20 @@ export default function Theme() {
             <h2 className="md:w-1/3 font-bold text-base md:text-xl">
               {item.title}
             </h2>
-            <div className="md:w-2/3 mt-1 md:mt-0 text-sm md:text-lg">
-              {item.content}
+            <div 
+              className="md:w-2/3 mt-1 md:mt-0 text-sm md:text-lg overflow-hidden"
+            >
+              <div 
+                className="transform"
+                style={{
+                  transform: isVisible ? 'translateX(0)' : 'translateX(100%)',
+                  opacity: isVisible ? 1 : 0,
+                  transition: 'transform 0.8s ease-out, opacity 0.8s ease-out',
+                  transitionDelay: `${index * 0.3}s`
+                }}
+              >
+                {item.content}
+              </div>
             </div>
           </div>
           
@@ -67,7 +79,7 @@ export default function Theme() {
               style={{
                 width: isVisible ? '100%' : '0%',
                 transition: 'width 1.2s ease-in-out',
-                transitionDelay: `${index * 0.3}s` // Staggered animation
+                transitionDelay: `${index * 0.3}s`
               }}
             />
           </div>

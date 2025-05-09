@@ -84,20 +84,20 @@ export default function About() {
         </p>
 
         {/* Two images side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-[450px] w-full md:w-[80%] mx-auto">
           <div className="overflow-hidden">
             <img
               src="/homepage/protestor.webp"
               alt="People gathering during protests"
-              className="w-full h-96 object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
 
-          <div className="hidden md:block aspect-[4/5] overflow-hidden md:mt-12">
+          <div className="hidden md:block overflow-hidden md:mt-12">
             <img
               src="/homepage/protestor.webp"
               alt="Written letters and memories"
-              className="w-full h-96 object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
         </div>
