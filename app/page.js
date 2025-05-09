@@ -1,3 +1,4 @@
+import Footer from "@/components/global/Footer";
 import About from "@/components/homepage/About";
 import CategoriesSection from "@/components/homepage/Categories";
 import FAQSection from "@/components/homepage/FAQ";
@@ -21,6 +22,7 @@ export default function Home() {
       </div>
       <Theme />
       <FAQSection />
+      <Footer />
     </div>
     </>
   );
