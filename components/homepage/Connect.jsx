@@ -37,13 +37,14 @@ export default function Connect() {
                         {/* Top: Heading */}
                         <div className="flex justify-between items-start">
                             <h3 className="text-[40px] font-bold tracking-[-0.075em]">News[letter]</h3>
-                            {/* Optional Image Placeholder */}
-                            {/* <img src="/some-icon.svg" alt="Icon" className="w-8 h-8" /> */}
                         </div>
 
                         {/* Middle: Waitlist */}
                         <div className="mt-10">
-                            <span className="text-sm font-medium text-[#1E2125] mb-2 block">[Join the waitlist]</span>
+                            <div className="flex items-center justify-between mb-2">
+                                <span className="text-sm font-medium text-[#1E2125]">[Join the waitlist]</span>
+                                <ArrowRight className="w-5 h-5 text-[#1E2125]" />
+                            </div>
                             <div className="w-full h-[1px] bg-black" />
                         </div>
 
