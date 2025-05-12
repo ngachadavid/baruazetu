@@ -1,6 +1,7 @@
 import Footer from "@/components/global/Footer";
 import About from "@/components/homepage/About";
 import CategoriesSection from "@/components/homepage/Categories";
+import Connect from "@/components/homepage/Connect";
 import FAQSection from "@/components/homepage/FAQ";
 // import Hero from "@/components/homepage/Hero";
 import HeroSection from "@/components/homepage/HeroSection";
@@ -22,6 +23,7 @@ export default function Home() {
       </div>
       <Theme />
       <FAQSection />
+      <Connect />
       <Footer />
     </div>
     </>
