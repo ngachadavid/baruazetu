@@ -3,19 +3,19 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Connect() {
     return (
-        <section className="max-w-[1280px] max-2xl:px-4 mx-auto px-6 py-20 text-[#1E2125]">
+        <section className="max-w-[1280px] max-2xl:px-4 mx-auto px-0 md:px-6 py-6 md:py-20 text-[#1E2125]">
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Left: Connect */}
-                <div className="w-full md:w-1/2 px-10 group">
+                <div className="w-full md:w-1/2 px-0 md:px-10 group">
                     <div className="bg-[#DDE6D5] px-6 flex flex-col justify-between h-full">
                         {/* Top: Connect + Image */}
                         <div className="flex justify-between items-start">
-                            <h3 className="text-[48px] font-bold tracking-[-0.075em]">Contribute</h3>
-                            <img src="/homepage/protestor.webp" alt="icon" className="w-44 h-32 object-contain" />
+                            <h3 className="text-[24px] md:text-[48px] font-bold tracking-[-0.075em]">Contribute</h3>
+                            <img src="/homepage/protestor.webp" alt="icon" className="w-20 md:w-44 h-12 md:h-32 object-contain" />
                         </div>
 
                         {/* Middle: Description */}
-                        <p className="text-sm text-[#1E2125] mt-6 w-full md:w-[80%] mx-auto group-hover:underline transition-all duration-300">
+                        <p className="text-xs md:not-visited:text-sm text-[#1E2125] mt-6 w-full md:w-[80%] mx-auto group-hover:underline transition-all duration-300">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin fermentum justo sed sapien ultrices, vel feugiat nisl convallis.
                         </p>
 
@@ -24,7 +24,7 @@ export default function Connect() {
                             <div className="absolute left-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                                 <ArrowRight className="w-8 h-8" />
                             </div>
-                            <span className="text-[48px] font-bold tracking-[-0.075em] group-hover:translate-x-2 transition-all duration-300">
+                            <span className="text-[24px] md:text-[48px] font-bold tracking-[-0.075em] group-hover:translate-x-2 transition-all duration-300">
                                 share with us
                             </span>
                         </div>
@@ -32,17 +32,17 @@ export default function Connect() {
                 </div>
 
                 {/* Right: Newsletter */}
-                <div className="w-full md:w-1/2 px-14 py-6">
+                <div className="w-full md:w-1/2 px-4 md:px-14 py-4 md:py-6">
                     <div className="bg-[#F0DADA] px-6 flex flex-col justify-between h-full rounded-md">
                         {/* Top: Heading */}
                         <div className="flex justify-between items-start">
-                            <h3 className="text-[40px] font-bold tracking-[-0.075em]">News[letter]</h3>
+                            <h3 className="text-[20px] md:text-[40px] font-bold tracking-[-0.075em]">News[letter]</h3>
                         </div>
 
                         {/* Middle: Waitlist */}
                         <div className="mt-10">
                             <div className="flex items-center justify-between mb-2">
-                                <span className="text-sm font-medium text-[#1E2125]">[Join the waitlist]</span>
+                                <span className="text-xs md:text-sm font-medium text-[#1E2125]">[Join the waitlist]</span>
                                 <ArrowRight className="w-5 h-5 text-[#1E2125]" />
                             </div>
                             <div className="w-full h-[1px] bg-black" />
@@ -50,7 +50,7 @@ export default function Connect() {
 
                         {/* Bottom: Footer text aligned bottom-right */}
                         <div className="flex justify-end pt-6 mt-auto">
-                            <span className="text-[40px] font-bold tracking-[-0.075em]">from the frontlines</span>
+                            <span className="text-[20px] md:text-[40px] font-bold tracking-[-0.075em]">from the frontlines</span>
                         </div>
                     </div>
                 </div>
