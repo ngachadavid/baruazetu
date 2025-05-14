@@ -1,13 +1,15 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Connect() {
     return (
         <section className="max-w-[1280px] max-2xl:px-4 mx-auto px-0 md:px-6 py-6 md:py-20 text-[#1E2125]">
             <div className="flex flex-col md:flex-row gap-8">
                 {/* Left: Connect */}
-                <div className="w-full md:w-1/2 px-0 md:px-10 group">
-                    <div className="bg-[#DDE6D5] px-6 flex flex-col justify-between h-full">
+                <div className="w-full md:w-1/2 px-0 md:px-10">
+                   <Link href="/contribute" className="block h-full">
+                    <div className="bg-[#DDE6D5] px-6 flex flex-col justify-between h-full group">
                         {/* Top: Connect + Image */}
                         <div className="flex justify-between items-start">
                             <h3 className="text-[24px] md:text-[48px] font-bold tracking-[-0.075em]">Contribute</h3>
@@ -29,6 +31,7 @@ export default function Connect() {
                             </span>
                         </div>
                     </div>
+                   </Link>
                 </div>
 
                 {/* Right: Newsletter */}

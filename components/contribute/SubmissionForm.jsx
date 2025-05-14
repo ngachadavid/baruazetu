@@ -85,10 +85,8 @@ export default function SubmissionForm() {
   };
 
   return (
-    <div className="max-w-[1280px] max-2xl:px-4 mx-auto px-6 py-20">
-        <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-10 p-4 border rounded space-y-6 shadow">
-      <h2 className="text-xl font-bold">Barua Zetu Submission Form</h2>
-
+    <div>
+        <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-10 p-4 boer rounded space-y-6 show">
       <div>
         <label className="block mb-1">Full Name</label>
         <input type="text" name="name" className="w-full p-2 border rounded" />
