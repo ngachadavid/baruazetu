@@ -149,14 +149,30 @@ export default function SubmissionForm() {
       </div>
 
       <div>
-        <label className="block mb-1">File Upload</label>
-        <input type="file" onChange={handleFileChange} className="w-full p-2 border" />
-        {fileUrl && (
-          <p className="text-sm text-green-600 mt-1">
-            Uploaded ✅ — <a href={fileUrl} target="_blank" rel="noreferrer" className="underline">View file</a>
-          </p>
-        )}
-      </div>
+  <label className="block mb-1 font-medium">File Upload</label>
+
+  <div className="relative w-full">
+    <input
+      type="file"
+      id="upload"
+      onChange={handleFileChange}
+      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+    />
+    <label
+      htmlFor="upload"
+      className="flex items-center justify-center w-full p-3 border border-dashed rounded bg-white text-gray-700 cursor-pointer hover:bg-gray-100 transition"
+    >
+      📎 Click to upload a file
+    </label>
+  </div>
+
+  {fileUrl && (
+    <p className="text-sm text-green-600 mt-2">
+      Uploaded ✅ — <a href={fileUrl} target="_blank" rel="noreferrer" className="underline">View file</a>
+    </p>
+  )}
+</div>
+
 
       <div>
         <label className="block font-medium mb-2">Consent *</label>
