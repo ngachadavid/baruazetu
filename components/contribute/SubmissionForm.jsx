@@ -88,18 +88,18 @@ export default function SubmissionForm() {
     <div>
         <form onSubmit={handleSubmit} className="max-w-xl mx-auto mt-10 p-4 boer rounded space-y-6 show">
       <div>
-        <label className="block mb-1">Full Name</label>
+        <label className="block mb-1 text-sm md:text-lg">Full Name</label>
         <input type="text" name="name" className="w-full p-2 border rounded" />
       </div>
 
       <div>
-        <label className="block mb-1">Email</label>
+        <label className="block mb-1 text-sm md:text-lg">Email</label>
         <input type="email" name="_replyto" required className="w-full p-2 border rounded" />
       </div>
 
       <div>
-        <label className="block mb-2 font-medium">Would you like your submission to be anonymous? *</label>
-        <div className="space-y-2">
+        <label className="block mb-2 font-medium text-sm md:text-lg">Would you like your submission to be anonymous? *</label>
+        <div className="space-y-2 text-xs md:text-base">
           <label>
             <input type="radio" name="anonymity" value="yes" required onChange={handleAnonymityChange} />
             {' '}Yes, keep me anonymous
@@ -119,13 +119,13 @@ export default function SubmissionForm() {
       </div>
 
       <div>
-        <label className="block mb-1">Title / Role</label>
+        <label className="block mb-1 text-sm md:text-lg">Title / Role</label>
         <input type="text" name="role" placeholder="e.g., student, activist..." className="w-full p-2 border rounded" />
       </div>
 
       <div>
-        <label className="block mb-2 font-medium">What are the main themes of your submission? (Select all that apply) *</label>
-        <div className="space-y-2">
+        <label className="block mb-2 font-medium text-sm md:text-lg">What are the main themes of your submission? (Select all that apply) *</label>
+        <div className="space-y-2 text-xs md:text-base">
           {[
             'Before the Protest',
             'During the Protest',
@@ -149,7 +149,7 @@ export default function SubmissionForm() {
       </div>
 
       <div>
-  <label className="block mb-1 font-medium">File Upload</label>
+  <label className="block mb-1 font-medium text-sm md:text-lg">File Upload</label>
 
   <div className="relative w-full">
     <input
@@ -175,7 +175,7 @@ export default function SubmissionForm() {
 
 
       <div>
-        <label className="block font-medium mb-2">Consent *</label>
+        <label className="block font-medium mb-2 text-sm md:text-lg">Consent *</label>
         <div className="space-x-2">
           <input
             type="checkbox"
@@ -183,7 +183,7 @@ export default function SubmissionForm() {
             checked={consentGiven}
             onChange={() => setConsentGiven(!consentGiven)}
           />
-          <span className="text-sm">
+          <span className="text-xs md:text-base">
             I give permission for my submission to be included in the Barua Zetu – A Memory Project archives and future exhibitions, publications, or educational materials (credited or anonymous based on my choices above). Barua-Zetu will not use my story for any commercial purposes. In all permitted uses, the owner and/or writer of the story will be appropriately credited, unless I have chosen to remain anonymous. By submitting your story, you confirm that you understand and agree to these terms.
           </span>
         </div>
