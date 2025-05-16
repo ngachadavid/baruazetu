@@ -5,11 +5,11 @@
 }
 
 /* Font configurations */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: var(--font-karla), Arial, Helvetica, sans-serif;
 }
 
-body, p, span, div, li, a {
+h1, body, p, span, div, li, a {
   font-family: var(--font-work-sans), Arial, Helvetica, sans-serif;
 }
 

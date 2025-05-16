@@ -56,7 +56,7 @@ export default function FAQSection() {
     }
 
     return (
-        <section className="max-w-[1280px] max-2xl:px-4 mx-auto px-6 py-20">
+        <section className="max-w-[1280px] max-2xl:px-4 mx-auto px py-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-10">Frequently Asked Questions</h2>
 
             {faqs.map((faq, index) => (

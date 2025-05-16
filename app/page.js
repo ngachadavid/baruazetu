@@ -3,6 +3,7 @@ import About from "@/components/homepage/About";
 import CategoriesSection from "@/components/homepage/Categories";
 import Connect from "@/components/homepage/Connect";
 import FAQSection from "@/components/homepage/FAQ";
+import Hero from "@/components/homepage/Hero";
 // import Hero from "@/components/homepage/Hero";
 import HeroSection from "@/components/homepage/HeroSection";
 import MemoryShowcase from "@/components/homepage/History";
@@ -14,18 +15,17 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-    {/* <HeroSection />
+      {/* <HeroSection />
     <About /> */}
-    <div className="overflow-x-hidden">
-      <HeroSection />
-      <div className="">
+      <div>
+        {/* <HeroSection /> */}
+        <Hero />
         <About />
+        <Theme />
+        <FAQSection />
+        <Connect />
+        <Footer />
       </div>
-      <Theme />
-      <FAQSection />
-      <Connect />
-      <Footer />
-    </div>
     </>
   );
 }
