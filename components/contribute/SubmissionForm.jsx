@@ -189,7 +189,7 @@ export default function SubmissionForm() {
         </div>
       </div>
 
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+      <button type="submit" className="bg-[#f1caca] text-white px-4 py-2 rounded">
         Submit
       </button>
 

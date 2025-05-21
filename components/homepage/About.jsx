@@ -56,7 +56,7 @@ export default function About() {
   }, []);
 
   return (
-    <section className="max-w-[1280px] max-2xl:px-4 mx-auto py-20">
+    <section className="max-w-[1280px] max-2xl:px-4 mx-auto py-10 md:py-20">
       <div className="">
         {/* Heading */}
         <h2 className="text-3xl md:text-5xl font-bold text-start mb-2">

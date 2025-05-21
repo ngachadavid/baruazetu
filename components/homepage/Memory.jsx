@@ -1,6 +1,6 @@
 const Memory = ({ index = 0 }) => {
     return (
-      <div className="w-full flex justify-end px-6 py-16 mr-48">
+      <div className="w-full flex justify-end px-x py-16 mr-48">
         {/* Container with top border */}
         <div className="w-full max-w-4xl border-t-2 border-black pt-8">
           {/* Bullet and Title */}

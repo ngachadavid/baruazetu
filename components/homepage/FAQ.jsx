@@ -61,26 +61,23 @@ export default function FAQSection() {
 
             {faqs.map((faq, index) => (
                 <div key={index} className="border-b border-black">
-                    <button
-                        className="w-full text-left py-4 flex justify-between items-center"
-                        onClick={() => toggleIndex(index)}
-                    >
-                        <span className="text-lg font-medium">{faq.question}</span>
-                        <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center relative">
+                    <button className="w-full py-4 flex items-start gap-4 text-left" onClick={() => toggleIndex(index)}>
+                        <span className="text-base md:text-xl font-medium flex-1">
+                            {faq.question}
+                        </span>
+                        <div className="w-6 h-6 flex-shrink-0 rounded-full border border-black flex items-center justify-center relative">
                             <span className="relative w-3 h-3 flex items-center justify-center">
                                 <span
-                                    className={`absolute w-3 h-0.5 bg-black transition-all duration-300 ${openIndex === index ? 'rotate-0' : ''
-                                        }`}
+                                    className={`absolute w-3 h-0.5 bg-black transition-all duration-300 ${openIndex === index ? 'rotate-0' : ''}`}
                                 />
                                 <span
-                                    className={`absolute h-3 w-0.5 bg-black transition-all duration-300 ${openIndex === index ? 'scale-y-0' : 'scale-y-100'
-                                        }`}
+                                    className={`absolute h-3 w-0.5 bg-black transition-all duration-300 ${openIndex === index ? 'scale-y-0' : 'scale-y-100'}`}
                                 />
                             </span>
                         </div>
                     </button>
                     {openIndex === index && (
-                        <div className="pb-4 text-gray-700 text-base md:text-lg font-[400]">
+                        <div className="pb-4 text-gray-700 text-sm md:text-lg font-[400]">
                             {faq.answer}
                         </div>
                     )}
