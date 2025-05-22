@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react'
-import Script from 'next/script'
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import Script from 'next/script';
 
 export default function FAQSection() {
     const [openIndex, setOpenIndex] = useState(null)
@@ -56,7 +57,13 @@ export default function FAQSection() {
     }
 
     return (
-        <section className="max-w-[1280px] max-2xl:px-4 mx-auto px py-20">
+        <motion.section
+            className="max-w-[1280px] max-2xl:px-4 mx-auto px py-20"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
             <h2 className="text-3xl md:text-5xl font-bold mb-10">Frequently Asked Questions</h2>
 
             {faqs.map((faq, index) => (
@@ -99,6 +106,6 @@ export default function FAQSection() {
                     }))
                 })}
             </Script>
-        </section>
+        </motion.section>
     )
 }
