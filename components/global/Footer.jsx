@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <section className="bg-black text-white pt-10">
+    <section className="relative z-20 bg-[#000000] text-white pt-10 w-full">
       <div className="max-w-[1280px] max-2xl:px-4 mx-auto py-4">
         {/* Upper div  */}
         <div className="flex flex-col md:flex-row">

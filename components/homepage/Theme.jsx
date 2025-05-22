@@ -33,7 +33,8 @@ const fadeUp = {
 
 export default function Theme() {
   return (
-    <div className="max-w-[1280px] max-2xl:px-4 mx-auto pt-0 pb-10 md:pb-20 space-y-6 md:space-y-12">
+    <section className='w-full relative z-20 bg-[#F8F4E3] py-10 md:py-20'>
+      <div className="max-w-[1280px] max-2xl:px-4 mx-auto pt-0 pb-10 md:pb-20 space-y-6 md:space-y-12">
       {themes.map((item, index) => (
         <motion.div
           key={index}
@@ -58,5 +59,6 @@ export default function Theme() {
         </motion.div>
       ))}
     </div>
+    </section>
   );
 }

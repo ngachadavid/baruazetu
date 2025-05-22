@@ -19,7 +19,8 @@ export default function Connect() {
     };
 
     return (
-        <motion.section
+       <section className='w-full relative z-20 bg-[#F8F4E3] py-10 md:py-20'>
+         <motion.section
             className="max-w-[1280px] max-2xl:px-4 mx-auto px-0 md:px-6 py-6 md:py-20 text-[#1E2125]"
             variants={fadeUp}
             initial="hidden"
@@ -80,5 +81,6 @@ export default function Connect() {
                 </div>
             </div>
         </motion.section>
+       </section>
     );
 }

@@ -17,7 +17,8 @@ const fadeUp = {
 
 export default function About() {
   return (
-    <section className="max-w-[1280px] max-2xl:px-4 mx-auto py-10 md:py-20">
+    <section className='w-full relative z-20 bg-[#F8F4E3] py-10 md:py-20'>
+      <div className=" max-w-[1280px] max-2xl:px-4 mx-auto ">
       <div>
         {/* Heading + Paragraph block */}
         <motion.div
@@ -73,6 +74,7 @@ export default function About() {
           </motion.div>
         </div>
       </div>
+    </div>
     </section>
   );
 }

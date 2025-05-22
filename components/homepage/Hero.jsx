@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="w-full h-screen flex flex-col md:flex-row">
+    <section className="w-full h-screen flex flex-col md:flex-row sticky top-0">
       {/* Right Section (Text) */}
       <div className="w-full md:w-1/2 flex flex-col px-2 pt-4 md:pt-12 md:px-6 order-1 md:order-2">
         <motion.h1
@@ -15,7 +15,7 @@ export default function Hero() {
         >
           Barua Zetu
         </motion.h1>
-
+        
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function Hero() {
           written expressions about our lives before, during and after the June 2024 protests.
         </motion.p>
       </div>
-
+      
       {/* Left Section (Boxes) */}
       <div className="w-[95%] md:w-1/2 flex flex-col flex-grow justify-end order-2 md:order-1">
         <motion.div

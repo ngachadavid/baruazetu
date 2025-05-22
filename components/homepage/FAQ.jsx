@@ -57,8 +57,9 @@ export default function FAQSection() {
     }
 
     return (
-        <motion.section
-            className="max-w-[1280px] max-2xl:px-4 mx-auto px py-20"
+        <section className='w-full relative z-20 bg-[#F8F4E3] py-10 md:py-20'>
+            <motion.section
+            className="max-w-[1280px] max-2xl:px-4 mx-auto"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -107,5 +108,6 @@ export default function FAQSection() {
                 })}
             </Script>
         </motion.section>
+        </section>
     )
 }
