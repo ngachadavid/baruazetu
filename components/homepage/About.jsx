@@ -53,7 +53,7 @@ export default function About() {
             transition={{ duration: 1, ease: 'easeOut', delay: 0.1 }}
           >
             <img
-              src="/homepage/protestor.webp"
+              src="/homepage/pr0.jpg"
               alt="People gathering during protests"
               className="w-full h-[450px] object-cover rounded-sm"
             />
